@@ -482,6 +482,7 @@ frontend_origin = os.getenv("FRONTEND_ORIGIN", "").strip()
 allowed_origins = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
+    "https://ladle-flow-smart-ladle-scheduling-system-13f5.onrender.com",
 ]
 if frontend_origin:
     allowed_origins.append(frontend_origin)
