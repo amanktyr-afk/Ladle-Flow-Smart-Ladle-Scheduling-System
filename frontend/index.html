@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS Ladle Tracking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="dashboard">
+    <header class="topbar">
+      <div class="brand">
+        <div class="factory-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M5 56V29l14 8V24l14 9V15h10v18l13-7v30H5Z" fill="currentColor"/><path d="M11 45h7v7h-7zm15 0h7v7h-7zm15 0h7v7h-7zM37 7h4v8h-4z" fill="#08264a"/><path d="M8 18l5-8 5 8M22 22l5-9 5 9" fill="none" stroke="#76c8ff" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="brand-copy">
+          <h1>SMS Ladle Tracking System</h1>
+          <p>REAL-TIME <span>|</span> 6 LADLES <span>|</span> STEEL MAKING PROCESS</p>
+        </div>
+      </div>
+      <div class="top-right">
+        <div class="clock-symbol">◷</div>
+        <div class="clock-text"><span>Current Time (IST)</span><strong id="currentTime">Connecting…</strong><small id="currentDate">Waiting for backend</small></div>
+        <div class="live-pill" id="connectionStatus"><i></i> CONNECTING</div>
+      </div>
+    </header>
+
+    <section class="process-flow">
+      <div class="process-step"><div class="process-icon orange"><span class="vessel">♨</span></div><div class="process-info"><b>BOF</b><span>40 min</span></div></div>
+      <div class="arrow">⟶</div>
+      <div class="process-step"><div class="process-icon"><span class="vessel">♨</span></div><div class="process-info"><b>LRF</b><span>49 min</span></div></div>
+      <div class="arrow">⟶</div>
+      <div class="process-step"><div class="process-icon orange"><span class="vessel">♨</span></div><div class="process-info"><b>VD</b><span>49 min</span></div></div>
+      <div class="arrow">⟶</div>
+      <div class="process-step"><div class="process-icon orange"><span class="vessel">♨</span></div><div class="process-info"><b>Caster</b><span>62 min (P95)</span></div></div>
+      <div class="arrow">⟶</div>
+      <div class="process-step"><div class="process-icon inspect"><span>⌕</span></div><div class="process-info"><b>Inspection</b><span>10 min</span></div></div>
+      <div class="arrow">⟶</div>
+      <div class="process-step"><div class="process-icon stand"><span>▱</span></div><div class="process-info"><b>Stand</b><span class="ready-chip">READY</span></div></div>
+    </section>
+
+    <section class="ladle-grid" id="ladleGrid"></section>
+
+    <section class="bottom-grid">
+      <section class="panel events-panel">
+        <div class="panel-title"><span class="title-icon">◷</span>Recent Events</div>
+        <div class="table-wrap"><table><thead><tr><th>Time ⟶</th><th>Ladle</th><th>Location / Route</th><th>Status</th><th>Event</th></tr></thead><tbody id="eventsBody"></tbody></table></div>
+      </section>
+      <aside class="panel summary-panel">
+        <div class="panel-title"><span class="title-icon bars">▥</span>System Summary</div>
+        <div class="summary-cards" id="summaryCards"></div>
+        <div class="legend-title">Status Legend</div>
+        <div class="legend"><span><i class="dot ready"></i>Ready</span><span><i class="dot processing"></i>Processing</span><span><i class="dot transit"></i>In Transit</span><span><i class="dot waiting"></i>Waiting</span></div>
+      </aside>
+    </section>
+    <footer>SMS Ladle Tracking System <span>•</span> Live data from FastAPI</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
 
